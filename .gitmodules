@@ -1,3 +1,9 @@
 [submodule "3rd/skynet"]
 	path = 3rd/skynet
 	url = https://github.com/cloudwu/skynet.git
+	branch = lua53
+[submodule "3rd/openssl"]
+	path = 3rd/openssl
+	url = git@github.com:openssl/openssl.git
+	branch = 1.0.2-aead
+
