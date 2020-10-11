@@ -31,3 +31,20 @@ function table.copy(tbl)
 	return new_tbl
 end
 
+-- 有序遍历
+function pairs_orderly(tbl, comp)
+	local keys = {}
+	for k, v in pairs(tbl) do
+		table.insert(keys, k)
+	end
+	table.sort(keys, comp)
+	local index = 0
+	local keys_count = #keys
+	local next_orderly = function()
+		index = index + 1
+		if index > keys_count then return end
+		return keys[index], tbl[keys[index]]
+	end
+	return next_orderly
+end
+

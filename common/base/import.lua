@@ -63,8 +63,8 @@ local function do_import(relapath, env)
 	setmetatable(new, mt)
 	setfenv(func, new)()
 
-	new_module.__import_time__ = os.time()
-	mt.__newindex = insert_var_with_warning()
+	new.__import_time__ = os.time()
+	mt.__newindex = insert_var_with_warning
 
 	call_module_init(new, false)
 

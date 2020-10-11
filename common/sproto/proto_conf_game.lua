@@ -5,6 +5,16 @@ conf_game.c2s = [[
 	type 0 : integer
 	session 1 : integer
 }
+
+login 1 {
+	request {
+		sessionid     0 : integer
+		htoken        1 : string
+	}
+	response {
+		code          0 : integer
+	}
+}
 ]]
 
 conf_game.s2c = [[

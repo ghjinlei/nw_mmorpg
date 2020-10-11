@@ -8,33 +8,24 @@ conf_login.c2s = [[
 
 handshake 1 {
 	request {
-		operator      0 : integer
-		channel       1 : integer
-		platform      2 : integer
-		openid        3 : string
-		appid         5 : string
-		os            6 : string
-		imei          7 : string
-		idfa          8 : string
+		ckey          0 : string
+		openid        1 : string
 	}
 	response {
-		code          0 : integer
-		msg           1 : string
-		salt          2 : string
-		patch         3 : string
-		server_sec    4 : integer
-		server_usec   5 : integer
-		server_tzone  6 : integer
+		skey          0 : string
+		challenge     1 : string
 	}
 }
 
 auth 2 {
 	request {
-		data          0 : string
+		hchallenge    0 : string
+		etoken        1 : string
 	}
 	response {
 		code          0 : integer
-		msg           1 : string
+		sessionid     1 : integer
+		token         2 : string
 	}
 }
 ]]
